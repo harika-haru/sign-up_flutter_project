@@ -22,6 +22,9 @@ class SignUp extends StatelessWidget{
     final TextEditingController firstNameController = TextEditingController();
     final  TextEditingController lastNameController = TextEditingController();
     final TextEditingController phoneNumber = TextEditingController();
+    final TextEditingController dateOfBirth = TextEditingController();
+    final TextEditingController age = TextEditingController();
+    final TextEditingController address = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         title: Text('Sign up',style: TextStyle(fontWeight: FontWeight.bold)),
@@ -35,17 +38,24 @@ class SignUp extends StatelessWidget{
               mainAxisAlignment: MainAxisAlignment.start,
 
               children: [
-                TextFormField(
-                  controller: firstNameController,
-                  decoration: InputDecoration(
-                    labelText: "First Name",
-                    border: OutlineInputBorder()
+                SizedBox(
+                  width: 150,
+                  child: TextFormField(
+                    controller: firstNameController,
+                    decoration: InputDecoration(
+                      labelText: "First Name",
+                      border: OutlineInputBorder()
+                    ),
                   ),
                 ),
-                TextFormField(
-                  controller: lastNameController,
-                  decoration: InputDecoration(
-                    labelText: "Last Name",
+                SizedBox(width: 20,),
+                SizedBox(
+                  width: 150,
+                  child: TextFormField(
+                    controller: lastNameController,
+                    decoration: InputDecoration(
+                      labelText: "Last Name",
+                    ),
                   ),
                 ),
                 SizedBox(height: 16,),
@@ -59,6 +69,27 @@ class SignUp extends StatelessWidget{
               keyboardType: TextInputType.number,
             ),
             SizedBox(height: 16,),
+            TextFormField(
+              controller: dateOfBirth,
+              decoration: InputDecoration(
+                labelText: "Date of Birth",
+              ),
+            ),
+            SizedBox(height: 16,),
+            TextFormField(
+              controller: age,
+              decoration: InputDecoration(
+                labelText: "Age",
+              ),
+            ),
+            SizedBox(height: 16,),
+            TextFormField(
+              controller: address,
+              decoration: InputDecoration(
+                labelText: "Address",
+              ),
+            ),
+
           ],
         ),
       ),
