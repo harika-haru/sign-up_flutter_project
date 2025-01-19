@@ -89,7 +89,19 @@ class SignUp extends StatelessWidget{
                 labelText: "Address",
               ),
             ),
-
+            SizedBox(height: 16,),
+            ElevatedButton(
+                onPressed:(){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ProfilePage(
+                        firstName: firstNameController.text,
+                        lastName
+                      )),
+                  );
+                },
+              child: Text("Continue",
+              style: TextStyle(backgroundColor: Colors.blue, color: Colors.white),),
+                ),
           ],
         ),
       ),
@@ -97,3 +109,31 @@ class SignUp extends StatelessWidget{
   }
 }
 
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Profile",),
+        centerTitle: true,
+      ),
+      body: Padding(
+          padding: EdgeInsets.all(16,),
+        child: Column(
+          children: [
+            Text("These are the details that you have provided while signup process",
+            style: TextStyle(fontSize: 16)),
+            SizedBox(height: 16,),
+            CircleAvatar(
+              radius: 50,
+              backgroundImage: AssetImage("assets/LinkedIn_profile.jpg"),
+            ),
+            SizedBox(height: 16,),
+          ],
+        ),
+      ),
+    );
+  }
+}
